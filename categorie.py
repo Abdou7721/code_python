@@ -2,7 +2,6 @@
 
 
 class Categorie:
-
     # Classe représentant une catégorie de produit dans le système.
 
     def __init__(self, id, nom):
