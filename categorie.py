@@ -1,6 +1,4 @@
 
-
-
 class Categorie:
     # Classe représentant une catégorie de produit dans le système.
 
@@ -26,4 +24,4 @@ class Categorie:
     def modifier_cat(self, nouveau_nom):
         # Modifie le nom de la catégorie
         self.nom = nouveau_nom
-        
+
