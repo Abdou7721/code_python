@@ -15,15 +15,9 @@ class Commande:
         self.date = date
         self.status = status
 
-    def Ajouter_cmd(self):
+    def __str__(self):
         return (f" Votre Commande est passée avec : id_commande={self.id_commande} , id_personnel={self.id_personnel}, id_Panier={self.id_Panier} "
                 f"par le client: {self.id_client} au :{self.date.strftime('%Y-%m-%d')}, Le status de la commande est ={self.status.value}")
-        pass
-    def Modifier_cmd(self):
-        # Logique pour ajouter une commande
-        pass
-    def Supprimer_cmd(self):
-        # Logique pour ajouter une commande
         pass
 
 
@@ -37,4 +31,4 @@ commande1 = Commande(
     status=Commande.Status.En_cours
 )
 
-print(commande1.Ajouter_cmd())
+print(commande1)
