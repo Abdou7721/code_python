@@ -4,9 +4,9 @@
 class Categorie:
     # Classe représentant une catégorie de produit dans le système.
 
-    def __init__(self, id, nom):
+    def __init__(self, id_categorie, nom):
 
-        self.id = id
+        self.id = id_categorie
         self.nom = nom
         self.produits = {}  
 
@@ -22,7 +22,6 @@ class Categorie:
     def supprimer_cat(self):
         # Supprime la catégorie en supprimant tous les produits associés
         self.produits = {}
-        
 
     def modifier_cat(self, nouveau_nom):
         # Modifie le nom de la catégorie
