@@ -1,6 +1,6 @@
-
+from user import User
 # Classe pour représenter les clients, héritant de Users
-class Client(Users):
+class Client(User):
     def __init__(self, id_client, id_user):
         super().__init__(id_user=id_user, nom='', prenom='', mot_de_passe='', telephone='', role=Role.Client)
         self.id_client = id_client
