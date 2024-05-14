@@ -3,7 +3,11 @@ from base import data
 from role import Role
 from users import Users
 
-
+class data:
+    produits=["ordinateur", "téléphone", "réfrigérateur", "voiture", "moto"]
+    commandes=[]
+    donnees_personnel=[]
+    
 class Administrateur(Users):
     def __init__(self, Id_admin, id_users):
         super().__init__(id_users=id_users, nom="", prenom="", mot_de_passe="", telephone="", role=Role.Admin)
