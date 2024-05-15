@@ -30,12 +30,12 @@ adminThera.Ajouter_utilisateur(4,"Adama", "Konate", "mot_de_pass", "12345678", R
 # admin = Admin(5,"JOE", "prenom", "mot_de_pass", "12345678", Role.Admin)
 # admin.ajouter_produit(produit1, products)
 # admin.ajouter_produit(produit2, products)
-adminThera.ajouter_produit(produitThera, products)
-adminThera.Ajouter_utilisateur(9,"Thera", "Badra", "mot_de_pass", "12345678", Role.Admin, donnees_personnel)
-for p in range(len(products)):
-    print(f"{products[p].toString()}")
-for p in range(len(donnees_personnel)):
-    print(f"{donnees_personnel[p]}")    
+#adminThera.ajouter_produit(produitThera, products)
+#adminThera.Ajouter_utilisateur(9,"Thera", "Badra", "mot_de_pass", "12345678", Role.Admin, donnees_personnel)
+#for p in range(len(products)):
+#    print(f"{products[p].toString()}")
+#for p in range(len(donnees_personnel)):
+ #   print(f"{donnees_personnel[p]}")    
 
 
 # print(admin.Ajouter_utilisateur(id_personnel=3,nom="John", prenom="Doe", mot_de_passe="password", telephone="1234567890", role=Role.Personnel))
@@ -46,16 +46,16 @@ clientMoh = Client(1, nom="Kone", prenom="Mohamed",mot_de_pass="eerty",telephone
 clientMoh.voir_produit(products)
 
 # Exemple d'utilisation :
-# client1 = Client(id_user=4, nom="John", prenom="Doe", mot_de_pass="azert", telephone="1234567890", role=Role.Client)
-# client1 = Client(id_user=4, nom="John", prenom="Doe", mot_de_pass="azert", telephone="1234567890", role=Role.Client)
+# client1 = Client(id_user=4, nom="John", prenom="Doe", mot_de_pass="azert", telephone="1234567890", role=Role.Client) 
+client1 = Client(id_user=4, nom="John", prenom="Doe", mot_de_pass="azert", telephone="1234567890", role=Role.Client)
 
 # client1.ajouter_produit_panier(produit1)
-clientMoh.ajouter_produit_panier(produitThera)
+#clientMoh.ajouter_produit_panier(produitThera)
 # client1.ajouter_produit_panier(produit2)
 # client1.supprimer_produit("PC")
 
 # client1.passer_commande()
-clientMoh.passer_commande()
+#clientMoh.passer_commande()
 # client1.effectuer_paiement(id_payement=1, mode_payement="Carte bancaire", date_reglement=date.today(), montant_paye=1000)
 clientMoh.effectuer_paiement(id_payement=1, mode_payement="Carte bancaire", date_reglement=date.today(), montant_paye=100)
 

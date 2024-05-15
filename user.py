@@ -8,5 +8,7 @@ class User:
         self.telephone = telephone
         self.role = role  
 
+    def role_str(self):
+        return self.role.value
     def __str__(self):
-        return f"l'utilisateur est: {self.id_user} nom : {self.nom} prenom : {self.prenom} role est: {Role.Admin}"
+        return f"l'utilisateur est: {self.id_user} nom : {self.nom} prenom : {self.prenom} role est: {self.role_str()}"
