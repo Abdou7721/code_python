@@ -3,16 +3,16 @@ from datetime import datetime
 
 class Produit:
     
-    def __init__(self,id_produit,libelle,date,prix,catégorie,quantiteProduit):
+    def __init__(self,id_produit,libelle,date,prix,catégorie_id,quantiteProduit):
         self.id_produit = id_produit
         self.libelle = libelle
         self.date = datetime.now()
         self.prix = prix
-        self.catégorie= catégorie
+        self.catégorie_id= catégorie_id
         self.quantiteProduit= quantiteProduit
 
     def __str__(self):
-        return f" id : {self.id_produit}, nom : {self.libelle} ,date d'ajout: {self.date},prix: {self.prix}, catégorie: {self.catégorie}, quantité: {self.quantiteProduit}"
+        return f" id : {self.id_produit}, nom : {self.libelle} ,date d'ajout: {self.date},prix: {self.prix}, catégorie id: {self.catégorie_id}, quantité: {self.quantiteProduit}"
 
 
 class Produit_Admin:

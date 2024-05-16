@@ -6,18 +6,22 @@ from produit import Produit
 
 
 class Client(User):
-    def __init__(self, id_user, nom, prenom, mot_de_pass, telephone, role):
+    def __init__(self, id_user, nom, prenom, mot_de_pass, telephone, role, id_panier):
         super().__init__(id_user, nom, prenom, mot_de_pass, telephone, role)
-        self.panier = []
+        self.id_panier = id_panier
     
-     # Méthode pour afficher les informations d'un produit
+     # Méthode pour afficher les produits
     def voir_produit(self, listproduit):
        for i in range(len(listproduit)):
          print(listproduit[i])
  
 
-    def ajouter_produit_panier(self, produit):
-        self.panier.append(produit)
+    def ajouter_produit_panier(self, produit: Produit, list_panier):
+        for i in range(len(list_panier)):
+            if(list_panier[i].id == self.id_panier):
+                list_panier[i].cart.append(produit)
+
+        # self.panier.append(produit)
         print(f"Le produit '{produit.libelle}' a été ajouté à votre panier.")
 
 
