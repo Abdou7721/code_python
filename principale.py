@@ -54,10 +54,10 @@ adminThera.ajouter_produit(produit3, products)
 adminThera.ajouter_produit(produit4, products)
 adminHarouna.ajouter_produit(produitHarouna,products)
 
-client1.ajouter_produit_panier(produit1, paniers)
-client1.ajouter_produit_panier(produit2, paniers)
-client1.ajouter_produit_panier(produit3, paniers)
-client3.ajouter_produit_panier(produit3, paniers)
+client1.ajouter_produit_panier(produit1, 5, paniers)
+client1.ajouter_produit_panier(produit1, 5, paniers)
+client1.ajouter_produit_panier(produit3, 5, paniers)
+client3.ajouter_produit_panier(produit3, 5, paniers)
 
 for h in range(len(paniers)):
    print(f"panier: id={paniers[h].id} cart={paniers[h].cart}")

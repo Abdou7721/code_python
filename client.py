@@ -16,13 +16,49 @@ class Client(User):
          print(listproduit[i])
  
 
-    def ajouter_produit_panier(self, produit: Produit, list_panier):
+    def ajouter_produit_panier(self, produit: Produit, nbr, list_panier):
         for i in range(len(list_panier)):
             if(list_panier[i].id == self.id_panier):
-                list_panier[i].cart.append(produit)
+                # list_panier[i].cart.append(produit)
+                cart = list_panier[i].cart
+                if(len(cart)==0):
+                    print("vide")
+                    produit.quantiteToCart += nbr
+                    cart.append(produit)
+                else:
+                    for k in range(len(cart)):
+                        print("icicicicic")
+                        if(cart[k].id_produit == produit.id_produit):
+                            cart[k].quantiteToCart += nbr
+                            print(cart[k].id_produit)
+                            break
+                        else:
+                            produit.quantiteToCart += nbr
+                            cart.append(produit)
+                            # print(cart)
+                            break
+                    
+                # produit.quantiteToCart += nbr
+                # cart.append(produit)
+                # print(cart)
+                # print("cart id",cart)
+                # for j in list_panier[i].cart:
+                #     print("ok", j)
+
+                # for k in cart:
+                #     print("icicicicic")
+                #     if(cart[k].id_produit == produit.id_produit):
+                #         cart[k].quantiteToCart += nbr
+                #         print(cart[k].id_produit)
+                #         break
+                    # else:
+                    #     produit.quantiteToCart += nbr
+                    #     cart.append(produit)
+                    #     print(cart.id)
+                    #     break
 
         # self.panier.append(produit)
-        print(f"Le produit '{produit.libelle}' a été ajouté à votre panier.")
+        # print(f"Le produit '{produit.libelle}' a été ajouté à votre panier.")
 
 
     def supprimer_produit(self, nom_produit):
