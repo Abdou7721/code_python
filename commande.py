@@ -7,6 +7,20 @@ class Commande:
     class Status(Enum):
         En_cours = 'En cours'
         Termine = 'Terminé'
+    
+    def __init__(self, id_commande, status=Status.En_cours):
+        self.id_commande = id_commande
+        self.status = status
+    
+    def update_status(self, new_status):
+        if new_status in Commande.Status:
+            self.status = new_status
+        else:
+            raise ValueError(f"{new_status} n'est pas un status valide")
+    
+    def __str__(self):
+        return f"Commande ID: {self.id_commande}, Status: {self.status.value}"
+
 
     def __init__(self, id_commande, id_personnel, id_Panier, id_client, date, status):
         self.id_commande = id_commande
