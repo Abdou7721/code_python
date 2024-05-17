@@ -8,8 +8,12 @@ class Commande:
         En_cours = 'En cours'
         Termine = 'Terminé'
     
-    def __init__(self, id_commande, status=Status.En_cours):
+    def __init__(self, id_commande, id_personnel, id_Panier, id_client, date, status=Status.En_cours):
         self.id_commande = id_commande
+        self.id_personnel = id_personnel
+        self.id_Panier = id_Panier
+        self.id_client = id_client
+        self.date = date
         self.status = status
     
     def update_status(self, new_status):
@@ -21,14 +25,6 @@ class Commande:
     def __str__(self):
         return f"Commande ID: {self.id_commande}, Status: {self.status.value}"
 
-
-    def __init__(self, id_commande, id_personnel, id_Panier, id_client, date, status):
-        self.id_commande = id_commande
-        self.id_personnel = id_personnel
-        self.id_Panier = id_Panier
-        self.id_client = id_client
-        self.date = date
-        self.status = status
 
     #def __str__(self):
        # return (f" Votre Commande est passée avec : id_commande={self.id_commande} , id_personnel={self.id_personnel}, id_Panier={self.id_Panier} "
