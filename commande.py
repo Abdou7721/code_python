@@ -14,6 +14,11 @@ class Commande:
         self.date = date
         self.status = status
         self.montant = montant
+        self.historique = []  # Ajout d'un attribut pour l'historique des changements de statut
+
+    def update_status(self, new_status, id_personnel):
+        self.status = new_status
+        self.historique.append((datetime.now(), id_personnel, new_status))
 
     def __str__(self):
         return f"Commande {self.id_client}, {self.montant} ({self.status.value})"
