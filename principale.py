@@ -18,8 +18,8 @@ paniers = [
     Panier(2),
     Panier(3),
 ]
-class data:
-    liste_commande=[]
+liste_commande = []
+    
 
 
 # produit1= Produit(1,"PC","",1000,"electronique", 20)
@@ -59,9 +59,14 @@ client1.ajouter_produit_panier(produit1, 5, paniers)
 client1.ajouter_produit_panier(produit3, 5, paniers)
 client3.ajouter_produit_panier(produit3, 5, paniers)
 
+# client1.supprimer_produit(produit1, paniers)
+
 for h in range(len(paniers)):
    print(f"panier: id={paniers[h].id} cart={paniers[h].cart}")
 
+varComande = client1.passer_commande(paniers)
+client1.effectuer_paiement(10450, varComande, liste_commande)
+print(liste_commande[0])
 # p = adminThera.recupe_produit_par_id(1, products)
 # h = adminHarouna.recupe_produit_par_id(6,products)
 # h_new = adminHarouna.recupe_produit_par_id(6,products)
