@@ -1,28 +1,19 @@
 from categorie import Categorie
 from personnel import Personnel
 from role import Role
-from produit import Produit, Produit_Admin
+from produit import Produit
 from user import User
 
-# donnees_personnel = []
-
 class Admin(User):
-    def __init__(self, id_user, nom, prenom, mot_de_pass, telephone, role):
-        super().__init__(id_user, nom, prenom, mot_de_pass, telephone, role=Role.Admin)
-        # self.id_user = id_user
-        # self.nom = nom
-        # self.prenom = prenom
-        # self.mot_de_pass = mot_de_pass
-        # self.telephone = telephone
-        # self.role = role 
-
-
-    # Cette methode crée et retourne un produit.
-    def creer_produit(self,id_produit,libelle,date,prix,catégorie: Categorie, quantiteProduit) -> Produit:
-        cate_id = catégorie.id
-        produit = Produit(id_produit,libelle,date,prix,cate_id, quantiteProduit)
+    def __init__(self, id_user, nom, prenom, mot_de_pass, telephone, role=Role.Admin):
+        super().__init__(id_user, nom, prenom, mot_de_pass, telephone, role)
+       
+    def creer_produit(self, id_produit, id_admin, libelle, date, prix, categorie: Categorie, quantiteProduit) -> Produit:
+        categorie_id = categorie.id  # Récupérez l'id de la catégorie
+        produit = Produit(id_produit, libelle, date, prix, categorie_id, quantiteProduit, id_admin)
         return produit
-    
+
+
     def recupe_produit_par_id(self, id, listproduit) -> Produit|None:
         for i in range(len(listproduit)):
             if(listproduit[i].id_produit == id):
@@ -53,7 +44,6 @@ class Admin(User):
 
     # Cette methode modifie un produit.
     def modifier_produit(self, produit: Produit, new_produit: Produit, listproduit):
-        # print(f"Le produit avant modif: {produit}")
         index_produit_inList = listproduit.index(produit)
         produit.libelle = new_produit.libelle
         produit.date = new_produit.date
@@ -94,3 +84,8 @@ class Admin(User):
         personnel_list[index_personnel_inList] = personnel
         print(f"Le produit apres modif: {personnel}")
 
+    def verifier_id_personnel(self, id_personnel, liste_personnel):
+        for personnel in liste_personnel:
+            if personnel.id_user == id_personnel:
+                return True
+        return False
